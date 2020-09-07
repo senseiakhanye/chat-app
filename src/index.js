@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on("sendLocation", (location, callback) => {
-        socket.broadcast.emit("message", `location: ${location.latitude}, ${location.longitude}`);
+        socket.broadcast.emit("locationMessage", `location: ${location.latitude}, ${location.longitude}`);
         callback();
     });
 
