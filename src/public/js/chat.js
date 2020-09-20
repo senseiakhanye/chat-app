@@ -42,4 +42,8 @@ locationButton.addEventListener("click", () => {
     });
 });
 
-socket.emit('join', { username, room });
+socket.emit('join', { username, room }, (user) => {
+    if (user == null) {
+        
+    }
+});
