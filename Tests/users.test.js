@@ -78,7 +78,9 @@ test("Should add user", () => {
         room: "browser",
         id: 10
     }
-    expect(Users.getUser(10)).not.toBeNull();
+    expect(Users.addUser(testUser)).not.toBeUndefined();
+    expect(Users.getUser(10)).not.toBeUndefined();
+    expect(Users.getUser(10).id).toEqual(10);
 });
 
 test("Should add user and delete", () => {
@@ -87,9 +89,9 @@ test("Should add user and delete", () => {
         room: "browser",
         id: 10
     }
-    Users.addUser(testUser);
+    expect(Users.addUser(testUser)).not.toBeUndefined();
     expect(Users.getUser(10)).not.toBeUndefined();
-    Users.removeUser(10);
+    expect(Users.removeUser(10)).not.toBeUndefined();
     expect(Users.getUser(10)).toBeUndefined();
 });
 

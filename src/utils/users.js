@@ -29,8 +29,12 @@ const clearAll = () => {
 }
 
 const removeUser = (id) => {
+    const userToDelete = getUser(id);
+    if (userToDelete == null) {
+        return ;
+    }
     users = users.filter(oneUser => oneUser.id !== id);
-    return users.find(oneUser => oneUser.id === id);
+    return userToDelete;
 }
 
 const getUser = (id) => {
